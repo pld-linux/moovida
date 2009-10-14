@@ -3,7 +3,7 @@ Summary:	Media center
 Summary(pl.UTF-8):	Centrum multimedialne
 Name:		moovida
 Version:	1.0.7
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		Applications/Multimedia
 Source0:	http://www.moovida.com/media/public/%{name}-%{version}.tar.gz
@@ -70,6 +70,11 @@ python setup.py install \
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%banner %{name} -e << EOF
+In order to have Moovida user interface, install moovida-plugins-bad.
+EOF
 
 %files
 %defattr(644,root,root,755)
